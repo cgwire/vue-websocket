@@ -1,6 +1,6 @@
 {
   "name": "vue-websocket",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Websocket handler for Vue.js",
   "homepage": "https://github.com/icebob/vue-websocket",
   "main": "dist/vue-websocket.js",
@@ -77,6 +77,6 @@
     "webpack-merge": "0.14.1"
   },
   "dependencies": {
-    "socket.io-client": "1.5.1"
+    "socket.io-client": "4.0.2"
   }
 }
