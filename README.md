@@ -23,19 +23,21 @@ Register the plugin. By default, it will connect to `/`:
 
 ```js
 import VueWebsocket from "vue-websocket";
-Vue.use(VueWebsocket);
+import IO from 'socket.io-client';
+
+Vue.use(VueWebsocket, IO);
 ```
 
 Or to connect to another address:
 
 ```js
-Vue.use(VueWebsocket, "ws://otherserver:8080");
+Vue.use(VueWebsocket, IO, "ws://otherserver:8080");
 ```
 
 You can also pass options:
 
 ```js
-Vue.use(VueWebsocket, "ws://otherserver:8080", {
+Vue.use(VueWebsocket, IO, "ws://otherserver:8080", {
 	reconnection: false
 });
 ```
