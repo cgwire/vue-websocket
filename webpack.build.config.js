@@ -1,13 +1,15 @@
-var webpack = require("webpack");
-var version = require("./package.json").version;
-var banner = "/**\n" + " * vue-websocket v" + version + "\n" + " * https://github.com/icebob/vue-websocket\n" + " * Released under the MIT License.\n" + " */\n";
+const webpack = require('webpack')
+const path = require('path')
+const version = require("./package.json").version;
+const banner = "/**\n" + " * vue-websocket v" + version + "\n" + " * https://github.com/icebob/vue-websocket\n" + " * Released under the MIT License.\n" + " */\n";
 
 module.exports = [
 	{
+		mode: "production",
 		devtool: "source-map",
 		entry: "./src/index",
 		output: {
-			path: "./dist",
+			path: path.resolve(__dirname, 'dist'),
 			filename: "vue-websocket.js",
 			library: "VueWebsocket",
 			libraryTarget: "umd"
@@ -19,30 +21,10 @@ module.exports = [
 					NODE_ENV : JSON.stringify("production")
 				}
 			}),
-			new webpack.optimize.UglifyJsPlugin({
-				compress: {
-					warnings: false
-				}
-			}),
-			new webpack.optimize.DedupePlugin(),
 			new webpack.BannerPlugin(banner, {
 				raw: true
 			})
 		],
-
-		module: {
-			loaders: [
-				{
-					"test": /\.js?$/,
-					"exclude": /node_modules/,
-					"loader": "babel"
-				},
-				{
-					"test": /\.vue$/,
-					"loader": "vue"
-				}	
-			]
-		}
 	}
 
 ];
