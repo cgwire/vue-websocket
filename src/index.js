@@ -1,7 +1,5 @@
 export default {
-
 	install(Vue, socketio, connection, opts) {
-
 		let socket;
 
 		if (connection != null && typeof connection === "object")
@@ -46,11 +44,16 @@ export default {
 			}
 		};
 
-		Vue.mixin({
-			[Vue.version.indexOf("2") === 0 ? "beforeCreate" : "beforeCompile"]: addListeners,
-			beforeDestroy: removeListeners
-		});
-
+    if (Vue.version.indexOf("3") === 0) {
+      Vue.mixin({
+        beforeCreate: addListeners,
+        beforeUnmount: removeListeners
+      }
+    } else {
+      Vue.mixin({
+        [Vue.version.indexOf("2") === 0 ? "beforeCreate" : "beforeCompile"]: addListeners,
+        beforeDestroy: removeListeners
+      });
+    }
 	}
-
 };
