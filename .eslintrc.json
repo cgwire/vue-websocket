@@ -13,9 +13,7 @@
     },
     "plugins": ["html"],
     "rules": {
-        "indent": ["warn", "tab"],
-        "quotes": ["warn", "double"],
-        "semi": ["error", "always"],
+        "semi": ["error", "never"],
         "no-var": ["error"],
         "no-console": ["off"],
         "no-unused-vars": ["warn"]

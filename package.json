@@ -1,13 +1,13 @@
 {
-  "name": "vue-websocket",
-  "version": "0.2.4",
+  "name": "vue-websocket-next",
+  "version": "0.2.5",
   "description": "Websocket handler for Vue.js",
-  "homepage": "https://github.com/icebob/vue-websocket",
+  "homepage": "https://github.com/cgwire/vue-websocket-next",
   "main": "dist/vue-websocket.js",
   "scripts": {
     "_prebuild": "npm run test",
     "build": "webpack --progress --config webpack.build.config.js",
-    "lint": "eslint --ext=.js,.vue src test/unit/specs",
+    "lint": "eslint --ext=.js,.vue src",
     "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "coverage": "npm run test && npm run coverall",
     "changelog": "conventional-changelog -i CHANGELOG.md -s",
@@ -24,18 +24,20 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/icebob/vue-websocket.git"
+    "url": "https://github.com/cgwire/vue-websocket-next.git"
   },
   "files": [
     "dist",
     "src"
   ],
-  "author": "Icebob",
+  "author": "Icebob & CGWire",
   "license": "MIT",
   "devDependencies": {
+    "eslint-plugin-html": "^6.2.0",
     "webpack": "5.53.0",
     "webpack-cli": "^4.8.0"
   },
   "dependencies": {
+    "eslint": "^7.32.0"
   }
 }
