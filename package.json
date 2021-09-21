@@ -5,16 +5,10 @@
   "homepage": "https://github.com/cgwire/vue-websocket-next",
   "main": "dist/vue-websocket.js",
   "scripts": {
-    "_prebuild": "npm run test",
+    "prebuild": "npm run lint",
     "build": "webpack --progress --config webpack.build.config.js",
     "lint": "eslint --ext=.js,.vue src",
-    "coverall": "cat ./test/unit/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-    "coverage": "npm run test && npm run coverall",
-    "changelog": "conventional-changelog -i CHANGELOG.md -s",
-    "unit": "karma start test/unit/karma.conf.js",
-    "pretest": "npm run lint",
-    "test": "npm run unit",
-    "ci": "karma start test/unit/karma.conf.js --auto-watch --no-single-run --reporters=dots --port=9877"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "vue",
