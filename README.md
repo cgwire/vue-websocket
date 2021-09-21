@@ -60,32 +60,33 @@ To use it in your components:
       // Prefix for event names
       // prefix: "/counter/",
 
-      // If you set `namespace`, it will create a new socket connection to the namespace instead of `/`
+      // If you set `namespace`, it will create a new socket connection to the 
+      // namespace instead of `/`
       // namespace: "/counter",
 
       events: {
         // Similar as this.$socket.on("changed", (msg) => { ... });
-        // If you set `prefix` to `/counter/`, the event name will be `/counter/changed`
+        // If you set `prefix` to `/counter/`, the event name will 
+        // be `/counter/changed`
         //
         changed(msg) {
-          console.log("Something changed: " + msg);
+          console.log("Something changed: " + msg)
         }
 
         connect() {
-          console.log("Websocket connected to " + this.$socket.nsp);
+          console.log("Websocket connected to " + this.$socket.nsp)
         },
 
         disconnect() {
-          console.log("Websocket disconnected from " + this.$socket.nsp);
+          console.log("Websocket disconnected from " + this.$socket.nsp)
         },
 
         error(err) {
-          console.error("Websocket error!", err);
+          console.error("Websocket error!", err)
         }
       }
     }
-  };
-
+  }
 </script>
 ```
 
@@ -117,7 +118,7 @@ Please send pull requests improving the usage and fixing bugs, improving documen
 This package was originally developed by Icebob. But it is now maintained by
 CGWire.
 
-![@icebob](https://img.shields.io/badge/github-icebob-green.svg)](https://github.com/icebob) 
+[![@icebob](https://img.shields.io/badge/github-icebob-green.svg)](https://github.com/icebob) 
 
 
 ## About CGWire
