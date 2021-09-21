@@ -1,15 +1,13 @@
-import IO from "socket.io-client";
-
 export default {
 
-	install(Vue, connection, opts) {
+	install(Vue, socketio, connection, opts) {
 
 		let socket;
 
 		if (connection != null && typeof connection === "object")
 			socket = connection;
 		else
-			socket = IO(connection || "", opts);
+			socket = socketio(connection || "", opts);
 
 		Vue.prototype.$socket = socket;
 
@@ -17,7 +15,7 @@ export default {
 			if (this.$options["socket"]) {
 				let conf = this.$options.socket;
 				if (conf.namespace) {
-					this.$socket = IO(conf.namespace, conf.options);
+					this.$socket = socketio(conf.namespace, conf.options);
 				}
 
 				if (conf.events) {
