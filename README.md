@@ -1,4 +1,4 @@
-# vue-websocket 
+# vue-websocket-next
 
 [![NPM version](https://img.shields.io/npm/v/vue-websocket-next.svg)](https://www.npmjs.com/package/vue-websocket-next)
 
