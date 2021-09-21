@@ -1,0 +1,8 @@
+/*!
+ * /**
+ *  * vue-websocket v0.2.5
+ *  * https://github.com/icebob/vue-websocket
+ *  * Released under the MIT License.
+ *  * /
+ *
+ */
