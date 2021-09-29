@@ -1,5 +1,5 @@
 export default {
-  install(Vue, socketio, connection, opts) {
+  install(app, socketio, connection, opts) {
     let socket
 
     if (connection != null && typeof connection === "object")
@@ -7,7 +7,7 @@ export default {
     else
       socket = socketio(connection || "", opts)
 
-    Vue.prototype.$socket = socket
+    app.config.globalProperties.$socket = socket
 
     let addListeners = function() {
       if (this.$options["socket"]) {
@@ -44,16 +44,9 @@ export default {
       }
     }
 
-    if (Vue.version.indexOf("3") === 0) {
-      Vue.mixin({
-        beforeCreate: addListeners,
-        beforeUnmount: removeListeners
-      })
-    } else {
-      Vue.mixin({
-        [Vue.version.indexOf("2") === 0 ? "beforeCreate" : "beforeCompile"]: addListeners,
-        beforeDestroy: removeListeners
-      })
-    }
+    app.mixin({
+      beforeCreate: addListeners,
+      beforeUnmount: removeListeners
+    })
   }
 }
