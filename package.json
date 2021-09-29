@@ -1,6 +1,6 @@
 {
   "name": "vue-websocket-next",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Websocket handler for Vue.js",
   "homepage": "https://github.com/cgwire/vue-websocket-next",
   "main": "dist/vue-websocket.js",
