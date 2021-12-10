@@ -17,7 +17,7 @@ $ npm install vue-websocket-next
 Register the plugin. By default, it will connect to `/`:
 
 ```js
-import VueWebsocket from "vue-websocket";
+import VueWebsocket from "vue-websocket-next";
 import IO from 'socket.io-client';
 
 Vue.use(VueWebsocket, IO);
